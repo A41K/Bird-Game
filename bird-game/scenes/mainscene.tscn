@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c3n73pv6a5mtg"]
+
+[ext_resource type="Script" uid="uid://c2uq5h4n4k6t6" path="res://scripts/MainScene.gd" id="1"]
+[ext_resource type="Script" uid="uid://bh2not3mj4j22" path="res://scripts/Player.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dbjgl0yvk2u31" path="res://icon.svg" id="2_nx3wj"]
+[ext_resource type="Script" uid="uid://bkroqellsludg" path="res://scripts/ObstacleSpawner.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/GameOverScreen.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/Background.tscn" id="6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(69, 67)
+
+[node name="mainscene" type="Node2D" unique_id=468541041]
+script = ExtResource("1")
+
+[node name="Background" parent="." unique_id=1084434335 instance=ExtResource("6")]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1349292718 groups=["player"]]
+position = Vector2(200, 300)
+collision_mask = 2
+script = ExtResource("2")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=882368293]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=69220982]
+position = Vector2(17.499998, 15.999992)
+scale = Vector2(0.53906244, 0.5312499)
+texture = ExtResource("2_nx3wj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=718478157]
+position = Vector2(17.5, 15.5)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="ObstacleSpawner" type="Node2D" parent="." unique_id=425247187]
+script = ExtResource("3")
+
+[node name="HUD" parent="." unique_id=117920097 instance=ExtResource("5")]
+
+[node name="GameOverScreen" parent="." unique_id=161663499 instance=ExtResource("4")]
