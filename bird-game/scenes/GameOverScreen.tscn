@@ -1,12 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://6m5i8dg1h8ql"]
 
 [ext_resource type="Script" uid="uid://k5kbj3g4iad2" path="res://scripts/GameOverScreen.gd" id="1"]
 
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="GameOverScreen" type="CanvasLayer" unique_id=269478627]
 process_mode = 3
 script = ExtResource("1")
 
-[node name="Dim" type="ColorRect" parent="."]
+[node name="Dim" type="ColorRect" parent="." unique_id=257851864]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,31 +14,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6)
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=682517144]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
-offset_bottom = 100.0
+offset_left = -186.0
+offset_top = -122.0
+offset_right = 201.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=530984601]
+layout_mode = 2
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=2145004054]
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
-horizontal_alignment = 1
 text = "Game Over"
-
-[node name="ScoreLabel" type="Label" parent="Panel/VBoxContainer"]
-theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
-text = "Score: 0"
 
-[node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Panel/VBoxContainer" unique_id=756672341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=1985638987]
+layout_mode = 2
 text = "Restart"

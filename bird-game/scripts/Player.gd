@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var rotation_smoothing: float = 6.0
 @export var obstacle_layer: int = 2 
 @export var jump_ease_time: float = 0.08
+@export var floor_y: float = 650.0  
+@export var ceiling_y: float = -50.0 
 
 @onready var sprite: Node2D = $Sprite2D  
 
@@ -35,6 +37,10 @@ func _physics_process(delta: float) -> void:
 
 	for i in get_slide_collision_count():
 		_check_collision(get_slide_collision(i))
+
+	if position.y > floor_y or position.y < ceiling_y:
+		print("Out of bounds at y=", position.y, " -- calling die()")
+		die()
 
 
 func _do_jump() -> void:
