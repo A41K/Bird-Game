@@ -40,3 +40,4 @@ script = ExtResource("3")
 [node name="HUD" parent="." unique_id=117920097 instance=ExtResource("5")]
 
 [node name="GameOverScreen" parent="." unique_id=161663499 instance=ExtResource("4")]
+visible = false

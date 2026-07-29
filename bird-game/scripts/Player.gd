@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 		print("Out of bounds at y=", position.y, " -- calling die()")
 		die()
 
-
 func _do_jump() -> void:
 	var tween := create_tween()
 	tween.tween_method(_set_jump_velocity, velocity.y, jump_force, jump_ease_time) \
@@ -59,7 +58,6 @@ func _check_collision(collision: KinematicCollision2D) -> void:
 		return
 	if collider.collision_layer & (1 << (obstacle_layer - 1)):
 		die()
-
 
 func die() -> void:
 	if is_dead:
